@@ -1,0 +1,66 @@
+{
+    "nomPagina": "Artes Marciales Mixtas.",
+    "ciglas": "MMA",
+    "desarrollo": 90 ,
+    "active": true,
+    "estilos": [
+        {
+            "nombre": "Muay Thai",
+            "pais": "Tailandia",
+            "tecnica": [
+                "Radiation resistance",
+                "Turning tiny",
+                "Radiation blast"
+            ]
+        },
+        {
+            "nombre": "Brazilian Juijitsu",
+            "pais": "Brasil",
+            "tecnica": [
+                "Million tonne punch",
+                "Damage resistance",
+                "Superhuman reflexes"
+            ]
+        },
+        {
+            "nombre": "krav maga",
+            "pais": "Israel",
+            "tecnica": [
+
+                "Heat Immunity",
+                "Inferno",
+                "Teleportation"
+            ]
+        },
+        {
+            "nombre": "Taekwondo",
+            "pais": "Corea",
+            "tecnica": [
+
+                "Heat Immunity",
+                "Inferno",
+                "Teleportation"
+            ]
+        },
+        {
+            "nombre": "Judo",
+            "pais": "Japon",
+            "tecnica": [
+
+                "Heat Immunity",
+                "Inferno",
+                "Teleportation"
+            ]
+        },
+        {
+            "nombre": "Boxeo",
+            "pais": "Inglaterra",
+            "tecnica": [
+
+                "Heat Immunity",
+                "Inferno",
+                "Teleportation"
+            ]
+        }
+    ]
+}

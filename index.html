@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+
+    <title>MMA</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Reggae+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+<header>
+
+</header>
+
+<section>
+
+</section>
+
+<script>
+
+    async function disiplinas() {
+
+        const requestURL = 'mma.json';
+        const request = new Request(requestURL);
+
+        const response = await fetch(request);
+        const mmaText = await response.text();
+
+        const mma = JSON.parse(mmaText);
+        disiplinasHeader(mma);
+        disiplinasMma(mma);
+        disiplinasFooter(mma);
+
+    }
+
+    function disiplinasHeader(obj) {
+        const header = document.querySelector('header');
+        const myH1 = document.createElement('h1');
+        myH1.textContent = obj.nomPagina;
+        header.appendChild(myH1);
+
+        const myPara = document.createElement('p');
+        myPara.textContent = `Siglas: ${obj.ciglas} // Desarrollo: Decada de los ${obj.desarrollo}`;
+        header.appendChild(myPara);
+    }
+
+    function disiplinasMma(obj) {
+        const section = document.querySelector('section');
+        const disiplinas = obj.estilos;
+
+        for (const disiplina of disiplinas) {
+            const myArticle = document.createElement('article');
+            const myH2 = document.createElement('h2');
+            const myPara1 = document.createElement('p');
+           
+            const myPara3 = document.createElement('p');
+            const myList = document.createElement('ul');
+
+            myH2.textContent = disiplina.nombre;
+            myPara1.textContent = `Pais Origen: ${disiplina.pais}`;
+            myPara3.textContent = 'Tenicas';
+
+            const tecnicas = disiplina.tecnica;
+            for (const tecnica of tecnicas) {
+                const listItem = document.createElement('li');
+                listItem.textContent = tecnica;
+                myList.appendChild(listItem);
+            }
+
+            myArticle.appendChild(myH2);
+            myArticle.appendChild(myPara1);
+            myArticle.appendChild(myPara3);
+            myArticle.appendChild(myList);
+
+            section.appendChild(myArticle);
+        }
+    }
+    function disiplinasFooter(obj) {
+        const footer = document.querySelector('footer');
+        const myH3 = document.createElement('h3');
+        myH3.textContent =`pagina de ${obj.nomPagina}`; 
+        footer.appendChild(myH3);
+
+
+    }
+
+    disiplinas();
+
+</script>
+<footer>   
+</footer>
+</body>
+</html>
